@@ -37,8 +37,11 @@ namespace QtSharpDemos.GuiExample
             combo.Move(50, 30);
             label.Move(50, 100);
 
-            //combo.ActivatedString += OnActivated;
+#if !DEBUG_X64
             combo.ActivatedText += OnActivated;
+#else
+            combo.ActivatedString += OnActivated;
+#endif
         }
 
         public void OnActivated(string text)
